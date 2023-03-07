@@ -100,9 +100,9 @@ end
 -- Run the created entity
 local Sound = Instance.new("Sound", game.Workspace)
 Sound.PlayOnRemove = true
-Sound.SoundId = "rbxassetid://858154930"
+Sound.SoundId = "rbxassetid://9120020147"
 Sound:Destroy()
 
-wait(3)
+wait(7)
 
 Spawner.runEntity(entityTable)
