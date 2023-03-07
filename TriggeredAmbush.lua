@@ -12,9 +12,9 @@ local entityTable = Spawner.createEntity({
     CanKill = false,
     KillRange = 100,
     BackwardsMovement = false,
-    BreakLights = true,
+    BreakLights = false,
     FlickerLights = {
-        true, -- Enabled/Disabled
+        false, -- Enabled/Disabled
         5, -- Time (seconds)
     },
     Cycles = {
@@ -99,3 +99,7 @@ end
 
 -- Run the created entity
 Spawner.runEntity(entityTable)
+local Sound = Instance.new("Sound", game.Workspace)
+Sound.PlayOnRemove = true
+Sound.SoundId = "rbxassetid://858154930"
+Sound:Destroy()
