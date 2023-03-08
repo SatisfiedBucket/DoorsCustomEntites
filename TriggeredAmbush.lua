@@ -20,7 +20,7 @@ local entityTable = Spawner.createEntity({
     Cycles = {
         Min = 5,
         Max = 10,
-        WaitTime = 0,
+        WaitTime = 2,
     },
     CamShake = {
         true, -- Enabled/Disabled
@@ -91,7 +91,7 @@ entityTable.Debug.OnDeath = function()
        Title = "Dinner's Ready",
        Desc = "We made " .. game.Players.LocalPlayer.Name .. " today!",
        Reason = "Die to Triggered Ambush",
-       Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7VxZ19xPmxfDT3tm6GNjq6pEvRkI8tIGrdg&usqp=CAU",
+       Image = "https://pic-bstarstatic.akamaized.net/ugc/b4fb0e75f0258e46d16ef20b9d90a6b5.jpeg@1200w_630h_1e_1c_1f.webp",
     })
 end
 ------------------------------------
