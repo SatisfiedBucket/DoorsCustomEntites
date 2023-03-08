@@ -91,7 +91,7 @@ entityTable.Debug.OnDeath = function()
        Title = "Dinner's Ready",
        Desc = "We made " .. game.Players.LocalPlayer.Name .. " today!",
        Reason = "Die to Triggered Ambush",
-       Image = "https://i1.sndcdn.com/artworks-LumrMjcQRfFE7nwz-B1Loyg-t500x500.jpg",
+       Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7VxZ19xPmxfDT3tm6GNjq6pEvRkI8tIGrdg&usqp=CAU",
     })
 end
 ------------------------------------
