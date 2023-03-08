@@ -9,7 +9,13 @@ local DepthRebounds = game.Workspace:FindFirstChild("Ultra-Nightmare"):FindFirst
 DepthRebounds.Name = "DepthReboundsLeft"
 DepthRebounds.Value = 5
 
+local Attacked = game.Workspace:FindFirstChild("Ultra-Nightmare"):FindFirstChild("Attacked") or Instance.new("BoolValue", UltraNightmare)
+Attacked.Name = "Attacked"
+
 local d = DepthRebounds
+local a = Attacked
+
+a.Value = true
 
 
 -- Create entity
@@ -19,7 +25,7 @@ local entityTable = Spawner.createEntity({
     Speed = 200, -- Percentage, 100 = default Rush speed
     DelayTime = 0, -- Time before starting cycles (seconds)
     HeightOffset = 0,
-    CanKill = true,
+    CanKill = false,
     KillRange = 50,
     BackwardsMovement = false,
     BreakLights = true,
@@ -107,13 +113,5 @@ DoorNumber.Changed:Connect(function()
     if d.Value > 0 then
         d.Value = d.Value - 1
         Spawner.runEntity(entityTable)
-    else
-        Achievements.Get({
-            Title = "Closet Pro",
-            Desc = "Watch your back before it fades to black!",
-            Reason = "Witness Depth",
-            Image = "https://static.wikia.nocookie.net/doors-ideas/images/0/0e/Depthingame.webp/revision/latest?cb=20221007200400",
-        })
-        DoorNumber = nil
     end
 end)
