@@ -113,5 +113,8 @@ DoorNumber.Changed:Connect(function()
     if d.Value > 0 then
         d.Value = d.Value - 1
         Spawner.runEntity(entityTable)
-    end
+    else
+        a.Value = false
+        error("Depth done")
+    then
 end)
