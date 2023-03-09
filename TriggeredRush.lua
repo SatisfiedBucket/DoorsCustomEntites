@@ -18,7 +18,7 @@ local entityTable = Spawner.createEntity({
         5, -- Time (seconds)
     },
     Cycles = {
-        Min = 1,
+        Min = 2,
         Max = 2,
         WaitTime = 0,
     },
