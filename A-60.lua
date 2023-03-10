@@ -90,7 +90,7 @@ end
 entityTable.Debug.OnDeath = function()
     local DeathMessage = {"You died to A-60.", "Wait, who is that?"}
 
-    firesignal(RS.EntityInfo.DeathHint.OnClientEvent, DeathMessage)
+    firesignal(RS:WaitForChild("EntityInfo").DeathHint.OnClientEvent, DeathMessage)
 
     Achievements.Get({
        Title = "Alternative Timeline",
