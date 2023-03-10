@@ -29,8 +29,4 @@ end)
 
 while wait() do
     FlashlightPart.CFrame = FlashlightPart.CFrame:lerp(Camera.CFrame, .25)
-    if not game.PlaceId == 6839171747 then
-        game.Lighting.ClockTime = 1
-        game.Lighting.Brightness = 0.3
-    end
 end
