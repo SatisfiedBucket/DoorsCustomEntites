@@ -90,7 +90,8 @@ end
 entityTable.Debug.OnDeath = function()
     local DeathMessage = {"You died to A-60.", "Wait, who is that?"}
 
-    firesignal(RS.Bricks.DeathHint.OnClientEvent, DeathMessage)
+    firesignal(RS.EntityInfo.DeathHint.OnClientEvent, DeathMessage)
+
     Achievements.Get({
        Title = "Alternative Timeline",
        Desc = "The one where you die.",
