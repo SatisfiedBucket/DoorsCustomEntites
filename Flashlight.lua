@@ -28,6 +28,6 @@ UIS.InputBegan:Connect(function(input)
     end
 end)
 
-RS.RenderStepped:Connect(function()
+RS.RenderStepped:Connect(function(step)
     FlashlightPart.CFrame = FlashlightPart.CFrame:lerp(Camera.CFrame, .25)
 end
