@@ -10,7 +10,7 @@ local entityTable = Spawner.createEntity({
     DelayTime = 2, -- Time before starting cycles (seconds)
     HeightOffset = 0,
     CanKill = true,
-    KillRange = 100,
+    KillRange = 1000,
     BackwardsMovement = false,
     BreakLights = false,
     FlickerLights = {
@@ -18,8 +18,8 @@ local entityTable = Spawner.createEntity({
         5, -- Time (seconds)
     },
     Cycles = {
-        Min = 5,
-        Max = 5,
+        Min = 4,
+        Max = 4,
         WaitTime = 2,
     },
     CamShake = {
