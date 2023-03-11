@@ -4,6 +4,7 @@ local Light = FlashlightPart:FindFirstChild("FlashlightScript") or Instance.new(
 local UIS = game:GetService("UserInputService")
 local Sound = game:GetService("SoundService"):FindFirstChild("FlashlightClickSoundScript") or Instance.new("Sound", game:GetService("SoundService"))
 local Camera = game.Workspace.CurrentCamera
+local RS = game:GetService("RunService")
 
 Sound.SoundId = "rbxassetid://5991592592"
 Sound.Volume = 10
@@ -27,6 +28,6 @@ UIS.InputBegan:Connect(function(input)
     end
 end)
 
-while wait() do
+RunService.Stepped:Connect(function()
     FlashlightPart.CFrame = FlashlightPart.CFrame:lerp(Camera.CFrame, .25)
 end
