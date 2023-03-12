@@ -1,5 +1,6 @@
 local UltraNightmare = game.Workspace:FindFirstChild("Ultra-Nightmare") or Instance.new("Folder", game.Workspace)
 local DoorNumber = game.ReplicatedStorage:WaitForChild("GameData"):WaitForChild("LatestRoom")
+local RS = game:GetService("ReplicatedStorage")
 
 UltraNightmare.Name = "Ultra-Nightmare"
 
