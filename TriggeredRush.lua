@@ -1,6 +1,7 @@
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 local RS = game:GetService("ReplicatedStorage")
+local DeathMessage = {"You died to Triggered Rush.", "It's like Rush I'm guessing, but it comes back a few times.", "You should try what you learned with Ambush."}
 
 
 -- Create entity
