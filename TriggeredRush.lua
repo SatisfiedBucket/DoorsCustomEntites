@@ -52,7 +52,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You died to Triggered Rush.", "It can rebound twice unlike the regular Rush.", "Come back again, it would be nice."}, -- Custom death message
+    CustomDialog = {"You died to Triggered Rush.", "It's like Rush I'm guessing, but it comes back a few times." "You should try what you learned with Ambush."}, -- Custom death message
 })
 
 
@@ -87,6 +87,8 @@ entityTable.Debug.OnLookAtEntity = function()
 end
 
 entityTable.Debug.OnDeath = function()
+    firesignal(RS.Bricks.DeathHint.OnClientEvent, DeathMessage, "Blue")
+    
     Achievements.Get({
        Title = "I'm triggered..",
        Desc = "..and your triggered.",
