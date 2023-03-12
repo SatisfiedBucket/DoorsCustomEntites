@@ -52,7 +52,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"You died to Triggered Ambush.", "Remember that old Green idiot? Yeah, just him but worse.", "Try again, we still have more time.."}, -- Custom death message
+    CustomDialog = {"You died to Triggered Ambush.", "I hate him as much as you do." "He seems to rebound 5 times."}, -- Custom death message
 })
 
 
@@ -87,6 +87,8 @@ entityTable.Debug.OnLookAtEntity = function()
 end
 
 entityTable.Debug.OnDeath = function()
+    firesignal(RS.Bricks.DeathHint.OnClientEvent, DeathMessage, "Blue")
+
     Achievements.Get({
        Title = "Dinner's Ready",
        Desc = "We made " .. game.Players.LocalPlayer.Name .. " today!",
