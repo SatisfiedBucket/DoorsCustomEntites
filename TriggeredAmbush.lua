@@ -1,6 +1,7 @@
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 local RS = game:GetService("ReplicatedStorage")
+local DeathMessage = {"You died to Triggered Ambush.", "I hate him as much as you do." "He seems to rebound 5 times.", "You've seen him before right?"}
 
 
 -- Create entity
@@ -88,7 +89,7 @@ entityTable.Debug.OnLookAtEntity = function()
 end
 
 entityTable.Debug.OnDeath = function()
-    firesignal(RS.Bricks.DeathHint.OnClientEvent, CustomDialog, "Blue")
+    firesignal(RS.Bricks.DeathHint.OnClientEvent, DeathMessage, "Blue")
 
     Achievements.Get({
        Title = "Dinner's Ready",
