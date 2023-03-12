@@ -1,3 +1,7 @@
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
+local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
+local RS = game:GetService("ReplicatedStorage")
+
 -- Create entity
 local entityTable = Spawner.createEntity({
     CustomName = "A-60", -- Custom name of your entity
