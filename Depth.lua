@@ -1,5 +1,7 @@
 local UltraNightmare = game.Workspace:FindFirstChild("Ultra-Nightmare") or Instance.new("Folder", game.Workspace)
 local DoorNumber = game.ReplicatedStorage:WaitForChild("GameData"):WaitForChild("LatestRoom")
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
+local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 local RS = game:GetService("ReplicatedStorage")
 local DeathMessage = {"Depth isn't someone I've seen before, but he is familiar.", "If I haven't forgotten, he's the one that comes back.", "He's also handsome, but don't fall for him."}
 
