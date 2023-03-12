@@ -96,7 +96,7 @@ entityTable.Debug.OnLookAtEntity = function()
 end
 
 entityTable.Debug.OnDeath = function()
-    firesignal(RS.Bricks.DeathHint.OnClientEvent, DeathMessage, "Blue")
+    firesignal(RS.Bricks.DeathHint.OnClientEvent, CustomDialog, "Blue")
     
     Achievements.Get({
         Title = "Into the Depths",
