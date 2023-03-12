@@ -1,6 +1,7 @@
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 local RS = game:GetService("ReplicatedStorage")
+local DeathMessage = {"You died to A-60.", "Wait, who is that?"}
 
 -- Create entity
 local entityTable = Spawner.createEntity({
@@ -87,8 +88,6 @@ entityTable.Debug.OnLookAtEntity = function()
 end
 
 entityTable.Debug.OnDeath = function()
-    local DeathMessage = {"You died to A-60.", "Wait, who is that?"}
-
     firesignal(RS.Bricks.DeathHint.OnClientEvent, DeathMessage, "Blue")
 
     Achievements.Get({
