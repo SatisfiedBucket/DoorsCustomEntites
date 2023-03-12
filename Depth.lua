@@ -1,5 +1,3 @@
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
-local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 local UltraNightmare = game.Workspace:FindFirstChild("Ultra-Nightmare") or Instance.new("Folder", game.Workspace)
 local DoorNumber = game.ReplicatedStorage:WaitForChild("GameData"):WaitForChild("LatestRoom")
 
@@ -68,7 +66,7 @@ local entityTable = Spawner.createEntity({
             },
         },
     },
-    CustomDialog = {"Depth isn't someone I've seen before, but he is familiar.", "If I haven't forgotten, he's the one that comes back."}, -- Custom death message
+    CustomDialog = {"Depth isn't someone I've seen before, but he is familiar.", "If I haven't forgotten, he's the one that comes back.", "He's also pretty, but don't fall for him."}, -- Custom death message
 })
 
 
@@ -98,6 +96,8 @@ entityTable.Debug.OnLookAtEntity = function()
 end
 
 entityTable.Debug.OnDeath = function()
+    firesignal(RS.Bricks.DeathHint.OnClientEvent, DeathMessage, "Blue")
+    
     Achievements.Get({
         Title = "Into the Depths",
         Desc = "He was never seen again.",
