@@ -1,69 +1,48 @@
-local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors%20Entity%20Spawner/Source.lua"))()
 local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
-local RS = game:GetService("ReplicatedStorage")
-local DeathMessage = {"You died to Triggered Rush.", "It's like Rush I'm guessing, but it comes back a few times.", "You should try what you learned with Ambush."}
 
+---====== Define spawner ======---
 
--- Create entity
-local entityTable = Spawner.createEntity({
-    CustomName = "Triggered Rush", -- Custom name of your entity
-    Model = "rbxassetid://11637039767", -- Can be GitHub file or rbxassetid
-    Speed = 200, -- Percentage, 100 = default Rush speed
-    DelayTime = 2, -- Time before starting cycles (seconds)
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
+
+---====== Create entity ======---
+
+local entity = Spawner.createEntity({
+    CustomName = "Triggered Rush",
+    Model = "rbxassetid://11637039767", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
+    Speed = 200,
+    MoveDelay = 2,
     HeightOffset = 0,
     CanKill = true,
     KillRange = 50,
-    BackwardsMovement = false,
-    BreakLights = true,
+    SpawnInFront = false,
+    ShatterLights = true,
     FlickerLights = {
-        true, -- Enabled/Disabled
-        5, -- Time (seconds)
+        Enabled = true,
+        Duration = 5
     },
     Cycles = {
         Min = 2,
         Max = 2,
-        WaitTime = 0,
+        Delay = 0
     },
     CamShake = {
-        true, -- Enabled/Disabled
-        {3.5, 20, 0.1, 1}, -- Shake values (don't change if you don't know)
-        100, -- Shake start distance (from Entity to you)
+        Enabled = true,
+        Values = {1.5, 20, 0.1, 1},
+        Range = 100
     },
-    Jumpscare = {
-        false, -- Enabled/Disabled
-        {
-            Image1 = "rbxassetid://10483855823", -- Image1 url
-            Image2 = "rbxassetid://10483999903", -- Image2 url
-            Shake = true,
-            Sound1 = {
-                10483790459, -- SoundId
-                { Volume = 0.5 }, -- Sound properties
-            },
-            Sound2 = {
-                10483837590, -- SoundId
-                { Volume = 0.5 }, -- Sound properties
-            },
-            Flashing = {
-                true, -- Enabled/Disabled
-                Color3.fromRGB(255, 255, 255), -- Color
-            },
-            Tease = {
-                true, -- Enabled/Disabled
-                Min = 1,
-                Max = 3,
-            },
-        },
-    },
-    CustomDialog = {"You died to Triggered Rush.", "It's like Rush I'm guessing, but it comes back a few times." "You should try what you learned with Ambush."}, -- Custom death message
+    ResistCrucifix = true,
+    BreakCrucifix = true,
+    DeathMessage = {"You died to Triggered Rush.", "It's like Rush I'm guessing, but it comes back a few times." "You should try what you learned with Ambush."},
+    IsCuriousLight = false
 })
 
+---====== Debug ======---
 
------[[  Debug -=- Advanced  ]]-----
-entityTable.Debug.OnEntitySpawned = function()
-    print("Entity has spawned:", entityTable)
+entity.Debug.OnEntitySpawned = function()
+    print("Entity has spawned")
 end
 
-entityTable.Debug.OnEntityDespawned = function()
+entity.Debug.OnEntityDespawned = function()
     Achievements.Get({
        Title = "Daddy Issues",
        Desc = "I'm papa's special boy!",
@@ -72,25 +51,23 @@ entityTable.Debug.OnEntityDespawned = function()
     })
 end
 
-entityTable.Debug.OnEntityStartMoving = function()
-    print("Entity has started moving:", entityTable)
+entity.Debug.OnEntityStartMoving = function()
+    print("Entity started moving")
 end
 
-entityTable.Debug.OnEntityFinishedRebound = function()
-    print("Entity has finished rebound:", entityTable)
+entity.Debug.OnEntityFinishedRebound = function()
+    print("Entity finished rebound")
 end
 
-entityTable.Debug.OnEntityEnteredRoom = function(room)
-    print("Entity:", entityTable, "has entered room:", room)
+entity.Debug.OnEntityEnteredRoom = function(room)
+    print("Entity entered room:", room)
 end
 
-entityTable.Debug.OnLookAtEntity = function()
-    print("Player has looked at entity:", entityTable)
+entity.Debug.OnLookAtEntity = function()
+    print("Player looking at entity")
 end
 
-entityTable.Debug.OnDeath = function()
-    firesignal(RS.Bricks.DeathHint.OnClientEvent, DeathMessage, "Blue")
-    
+entity.Debug.OnDeath = function()
     Achievements.Get({
        Title = "I'm triggered..",
        Desc = "..and your triggered.",
@@ -98,8 +75,16 @@ entityTable.Debug.OnDeath = function()
        Image = "https://i1.sndcdn.com/artworks-LumrMjcQRfFE7nwz-B1Loyg-t500x500.jpg",
     })
 end
-------------------------------------
 
+--[[
+    NOTE: By overwriting 'OnUseCrucifix', the default crucifixion will be ignored and this function will be called instead
 
--- Run the created entity
-Spawner.runEntity(entityTable)
+    entity.Debug.OnUseCrucifix = function()
+        print("Custom crucifixion script here")
+    end
+]]--
+
+---====== Run entity ======---
+
+Spawner.runEntity(entity)
+
