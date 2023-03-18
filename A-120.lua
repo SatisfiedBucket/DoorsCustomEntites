@@ -42,14 +42,12 @@ entity.Debug.OnEntitySpawned = function()
 end
 
 entity.Debug.OnEntityDespawned = function()
-    if game.Players.LocalPlayer.Character.Humanoid.Health > 0 then
-        Achievements.Get({
+    Achievements.Get({
             Title = "Au Revoir",
             Desc = "We will meet again.",
-            Reason = "Survive A-120",
+            Reason = "Witness A-120",
             Image = "https://us-tuna-sounds-images.voicemod.net/85ce7c8c-cb4b-4534-b2cd-1a689e87d885-1678570441511.jfif",
-        })
-    end
+    })
 end
 
 entity.Debug.OnEntityStartMoving = function()
