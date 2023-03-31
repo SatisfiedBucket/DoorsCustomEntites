@@ -41,15 +41,6 @@ entity.Debug.OnEntitySpawned = function()
     print("Entity has spawned")
 end
 
-entity.Debug.OnEntityDespawned = function()
-    Achievements.Get({
-       Title = "I know that guy!",
-       Desc = "His name is A-60!",
-       Reason = "Witness A-60",
-       Image = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiSPigmVdtPBNJ8p-FHYyi8svi2FZLJt2AnA&usqp=CAU",
-    })
-end
-
 entity.Debug.OnEntityStartMoving = function()
     -- Begin move
 end
