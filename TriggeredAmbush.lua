@@ -31,7 +31,7 @@ local entity = Spawner.createEntity({
     },
     ResistCrucifix = true,
     BreakCrucifix = true,
-    DeathMessage = {"You died to Triggered Ambush.", "I hate him as much as you do." "He seems to rebound 5 times.", "You've seen him before right?"},
+    DeathMessage = {"You died to Triggered Ambush.", "I hate him as much as you do.", "He seems to rebound 5 times.", "You've seen him before right?"},
     IsCuriousLight = false
 })
 
@@ -88,6 +88,7 @@ end
 local Sound = Instance.new("Sound", game.Workspace)
 Sound.PlayOnRemove = true
 Sound.SoundId = "rbxassetid://9120020147"
+Sound.Volume = 5
 Sound:Destroy()
 
 wait(7)
