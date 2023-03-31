@@ -1,23 +1,7 @@
-local UltraNightmare = game.Workspace:FindFirstChild("Ultra-Nightmare") or Instance.new("Folder", game.Workspace)
-local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
-local DoorNumber = game.ReplicatedStorage:WaitForChild("GameData"):WaitForChild("LatestRoom")
-UltraNightmare.Name = "Ultra-Nightmare"
-
-local DepthRebounds = game.Workspace:FindFirstChild("Ultra-Nightmare"):FindFirstChild("DepthReboundsLeft") or Instance.new("IntValue", UltraNightmare)
-DepthRebounds.Name = "DepthReboundsLeft"
-DepthRebounds.Value = 5
-
-local Attacked = game.Workspace:FindFirstChild("Ultra-Nightmare"):FindFirstChild("Attacked") or Instance.new("BoolValue", UltraNightmare)
-Attacked.Name = "Attacked"
-
-local d = DepthRebounds
-local a = Attacked
-
-a.Value = true
-
 ---====== Define spawner ======---
 
 local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Entity%20Spawner/Source.lua"))()
+local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/RegularVynixu/Utilities/main/Doors/Custom%20Achievements/Source.lua"))()
 
 ---====== Create entity ======---
 
@@ -99,15 +83,4 @@ end
     end
 ]]--
 
----====== Run entity ======---
-
-DoorNumber.Changed:Connect(function()
-    if d.Value > 0 then
-        d.Value = d.Value - 1
-        Spawner.runEntity(entity)
-    else
-        return
-    end
-end)
-
-
+Spawner.runEntity(entity)
