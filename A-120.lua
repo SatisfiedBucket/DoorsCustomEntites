@@ -7,7 +7,7 @@ local Achievements = loadstring(game:HttpGet("https://raw.githubusercontent.com/
 
 local entity = Spawner.createEntity({
     CustomName = "A-120",
-    Model = "rbxassetid://12535128554", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
+    Model = "rbxassetid://12950862914", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
     Speed = 100,
     MoveDelay = 3,
     HeightOffset = 0,
