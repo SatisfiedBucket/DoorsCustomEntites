@@ -9,7 +9,7 @@ local entity = Spawner.createEntity({
     CustomName = "Triggered Ambush",
     Model = "rbxassetid://12304996805", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
     Speed = 500,
-    MoveDelay = 2,
+    MoveDelay = 0,
     HeightOffset = 0,
     CanKill = true,
     KillRange = 1000,
@@ -20,9 +20,9 @@ local entity = Spawner.createEntity({
         Duration = 1
     },
     Cycles = {
-        Min = 4,
-        Max = 4,
-        Delay = 2
+        Min = 3,
+        Max = 3,
+        Delay = 1
     },
     CamShake = {
         Enabled = true,
