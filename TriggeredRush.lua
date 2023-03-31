@@ -32,7 +32,7 @@ local entity = Spawner.createEntity({
     },
     ResistCrucifix = true,
     BreakCrucifix = true,
-    DeathMessage = {"You died to Triggered Rush.", "It's like Rush I'm guessing, but it comes back a few times." "You should try what you learned with Ambush."},
+    DeathMessage = {"You died to Triggered Rush.", "It's like Rush I'm guessing, but it comes back a few times.", "You should try what you learned with Ambush."},
     IsCuriousLight = false
 })
 
