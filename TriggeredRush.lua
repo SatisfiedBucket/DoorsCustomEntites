@@ -8,7 +8,7 @@ local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/Regul
 
 local entity = Spawner.createEntity({
     CustomName = "Triggered Rush",
-    Model = "rbxassetid://11637039767", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
+    Model = "rbxassetid://12989115124", -- Your entity's model url here ("rbxassetid://1234567890" or GitHub raw url)
     Speed = 200,
     MoveDelay = 2,
     HeightOffset = 0,
